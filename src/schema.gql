@@ -30,9 +30,10 @@ input SignUpInput {
 }
 
 input UpdateAuthInput {
-  """Example field (placeholder)"""
-  exampleField: Int
+  email: String
   id: Int!
+  password: String
+  username: String
 }
 
 type User {
