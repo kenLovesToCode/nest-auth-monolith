@@ -1,0 +1,12 @@
+services:
+  db:
+    image: postgres:latest
+    container_name: nestgqldb
+    ports:
+      - 5433:5432
+    expose:
+      - 5433
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=123123
+      - POSTGRES_DB=nestjs_graphql_prisma
