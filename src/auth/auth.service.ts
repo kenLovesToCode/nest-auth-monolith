@@ -65,20 +65,16 @@ export class AuthService {
     return { accessToken, refreshToken, user };
   }
 
-  findAll() {
-    return `This action returns all auth`;
-  }
+  async logout(userId: number) {
+    await this.prisma.user.updateMany({
+      where: {
+        id: userId,
+        hashedRefreshToken: { not: null },
+      },
+      data: { hashedRefreshToken: null },
+    });
 
-  findOne(id: number) {
-    return `This action returns a #${id} auth`;
-  }
-
-  update(id: number, updateAuthInput: UpdateAuthInput) {
-    return `This action updates a #${id} auth`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} auth`;
+    return { loggedOut: true };
   }
 
   //helpers
