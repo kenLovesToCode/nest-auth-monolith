@@ -1,5 +1,4 @@
 import { ForbiddenException, Injectable } from '@nestjs/common';
-import { UpdateAuthInput } from './dto/update-auth.input';
 import { SignUpInput } from './dto/input/sign-up.input';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { JwtService } from '@nestjs/jwt';
