@@ -12,4 +12,6 @@ npx prisma studio
 
 # when updating schema.prisma, always run
 $ npx prisma generate
+
+
 ```
