@@ -29,8 +29,8 @@ export class AuthResolver {
   }
 
   @Mutation(() => LogoutResponse)
-  logout(@Args('id', { type: () => Int }) id: number) {
-    return this.authService.logout(id);
+  logout(@CurrentUserId() userId: number) {
+    return this.authService.logout(userId);
   }
 
   @Public()

@@ -8,7 +8,7 @@ type LogoutResponse {
 
 type Mutation {
   getNewTokens: NewTokensResponse!
-  logout(id: Int!): LogoutResponse!
+  logout: LogoutResponse!
   signin(signInInput: SignInInput!): SignResponse!
   signup(signUpInput: SignUpInput!): SignResponse!
 }
